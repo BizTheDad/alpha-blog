@@ -26,8 +26,11 @@
             <%= link_to "View Profile", user_path(current_user), class: 'dropdown-item' %>
           </div>
         </li>
+        <li class='nav-link disabled'>
+          <%= current_user.username %>'s Profile <%= "(Admin)" if current_user.admin? %>
+        </li>
       <% else %>
-        <li class="nav-item">
+        <li>
           <%= link_to 'Log In', login_path, class: 'nav-link' %>
         </li>
         <li>
