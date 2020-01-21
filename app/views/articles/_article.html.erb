@@ -12,6 +12,7 @@
   <% if logged_in? && (current_user == obj.user || current_user.admin?) %>
     <td><%= link_to 'Edit', edit_article_path(obj) %></td>
     <td><%= link_to 'Delete', article_path(obj), method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    <td>Categories: <%= render obj.categories%></td>
   <% end %>
   </tr>
   <% end %>
